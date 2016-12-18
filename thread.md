@@ -85,6 +85,11 @@ public Class Test {
 ### 线程间的通信
 >通过锁机制、wait()与notify()、join()等方法实现线程间的通信
 
+* yield()方法让出当前占用的cpu，让其他线程执行。但是不会释放其拥有的锁
+* wait()方法释放其拥有的锁并处于等待状态，当另一线程调用notify或notifyAll方法时，唤醒wait的线程，并且要获取到锁之后才能进入到可运行状态
+* join()方法指的是调用某线程的join方法，该线程执行完毕后，当前线程在继续执行。比如main(){t.join()},t线程执行完毕后，在执行主线程main
+* sleep()方法线程睡眠并不释放锁，到达指定时间后处于Runnable状态，等待cpu调度
+
 * 参照：http://www.cnblogs.com/mengdd/archive/2013/02/16/2913628.html
 
 ### 线程的状态图
